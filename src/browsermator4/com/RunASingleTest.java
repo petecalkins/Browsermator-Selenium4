@@ -12,25 +12,11 @@ import java.awt.Rectangle;
 import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import javax.swing.SwingWorker;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 
-
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 
 
 
@@ -464,15 +450,14 @@ while(thisContinuePrompt.isVisible() == true){
 }
   
    
-        try
-        {
-       if (driver!=null) { driver.close(); }
-        }
-        catch(Exception e)
-        {
-            System.out.println(e.toString());
-     
-        }
+          try
+ {
+   if (driver != null) { driver.quit();}
+ }
+ catch (Exception ex)
+ {
+     // don't worry it should close
+ }
 
      } 
     
