@@ -124,14 +124,11 @@ connection.setDoOutput(true);
 else
 {
 
-      Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
+    
 
                 webEngine.load(url);
 
-            }
-        });
+        
 }
   }
   

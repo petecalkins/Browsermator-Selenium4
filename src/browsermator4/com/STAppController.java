@@ -57,7 +57,7 @@ public final SiteTestView Navigator;
 public JDesktopPane SeleniumToolDesktop;
 public final String UNIQUE_LOG_DIR;
 private int CurrentMDIWindowIndex;
-public final String ProgramVersion = "4.1.049";
+public final String ProgramVersion = "4.3.050";
 public final String lastWebDriverUpdate = "08072022";
 public boolean DriverUpdateFail = false;
 public String loginName;
