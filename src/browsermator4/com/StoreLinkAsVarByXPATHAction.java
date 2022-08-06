@@ -77,6 +77,7 @@ StoreLinkAsVarByXPATHAction(String TargetXPATH, String StoreVarName)
  }
  catch (Exception e)
  {
+  this.Exception = e.toString();
   this.Pass = false;
   
  }

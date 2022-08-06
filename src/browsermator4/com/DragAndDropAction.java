@@ -159,7 +159,7 @@ public class DragAndDropAction extends BMAction {
  catch (Exception e)
  {
   this.Pass = false;
-  System.out.println("Exception: " + e);
+  this.Exception = e.toString();
   
  }
     }  

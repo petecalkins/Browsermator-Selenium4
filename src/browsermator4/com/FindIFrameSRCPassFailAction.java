@@ -97,18 +97,18 @@ public class FindIFrameSRCPassFailAction extends BMAction
     if (ex.getClass().getCanonicalName().equals("org.openqa.selenium.StaleElementReferenceException"))
    {
    //need to do it again, not finished loading
-    System.out.println("*****************Stale caught-redoing");
+  //  System.out.println("*****************Stale caught-redoing");
     sanitycount++;
    if (sanitycount<ec_Timeout * 2)
     {
     RunAction(driver);
     }
-      System.out.println (ex.toString());
+  this.Exception = ex.toString();
   this.Pass = false;
     }
    else
    {
-             System.out.println ("Exception finding Href: " + ex.toString());
+       this.Exception = ex.toString();
              this.Pass = false;
    }
          }

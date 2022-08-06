@@ -67,7 +67,7 @@ public class FindImageSRCPassFailAction extends BMAction
                catch (Exception ex)
                {
                    this.Pass = false;
-                   System.out.println ("Exception Finding Image SRC: " + ex.toString());
+                this.Exception = ex.toString();
                }
      
     }

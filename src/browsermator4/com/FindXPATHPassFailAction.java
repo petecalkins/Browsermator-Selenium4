@@ -60,7 +60,7 @@ public class FindXPATHPassFailAction extends BMAction
          catch (Exception ex)
          {
              this.Pass = false;
-             System.out.println ("Exception finding XPATH" + ex.toString());
+            this.Exception = ex.toString();
          }
     }
 }

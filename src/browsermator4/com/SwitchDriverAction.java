@@ -402,17 +402,17 @@ public class SwitchDriverAction extends BMAction
     {
      boolean closecaught = false;
    
-
+// DriverFactory driverFactory = new DriverFactory(RunThread.STAppData);
  try
  {
    if (RunThread.driver!=null) {  RunThread.driver.quit(); Thread.sleep(2000);}
  }
  catch (Exception e)
  {
-  System.out.println("Exception when quitting driver on switch: " + e.toString());
+ this.Exception = e.toString();
   
  } 
- 
+ // RunThread.driver = driverFactory.buildDriver();
   File thisDriver =  new File( WEBDRIVERSDIR+"geckodriver-win32"+File.separator+"geckodriver.exe");
   switch (this.Variable1)
   {
@@ -484,8 +484,7 @@ public class SwitchDriverAction extends BMAction
     }
     catch (Exception ex)
     {
-        System.out.println ("Exception launching Marionette driver... possibly XP or missing msvcr110.dll: " + ex.toString());
-     
+     this.Exception = ex.toString();
          Prompter fallbackprompt = new Prompter ("Driver Error", "Could not launch Marionette driver:" + ex.toString(), false,0,0);
      
          
@@ -561,8 +560,7 @@ public class SwitchDriverAction extends BMAction
     }
     catch (Exception ex)
     {
-        System.out.println ("Exception launching Marionette driver... possibly XP or missing msvcr110.dll: " + ex.toString());
-     
+     this.Exception = ex.toString();
          Prompter fallbackprompt = new Prompter ("Driver Error", "Could not launch the Marionette driver: " + ex.toString(), false,0,0);
       
       
@@ -607,7 +605,7 @@ public class SwitchDriverAction extends BMAction
      catch (Exception ex)
              {
      
-    
+    this.Exception = ex.toString();
          Prompter fallbackprompt = new Prompter ("Driver Error", "Could not launch IEdriver: " +ex.toString(), false,0,0);
        
           
@@ -679,7 +677,7 @@ options.setBinary(chrome_main_path);
      }
    catch (Exception ex)
    {
-       System.out.println ("Problem launching Chromedriver: " + ex.toString());
+     this.Exception = ex.toString();
      
          Prompter fallbackprompt = new Prompter ("Driver Error", "Could not launch the Chromedriver." + ex.toString(), false,0,0);
   
@@ -714,7 +712,7 @@ options49.setBinary(chrome_path);
      }
    catch (Exception ex)
    {
-       System.out.println ("Problem launching Chromedriver 49: " + ex.toString());
+     this.Exception = ex.toString();
         Prompter fallbackprompt = new Prompter ("Driver Error", "Could not launch the Chrome 49 driver." + ex.toString(), false,0, 0);
           
    }
@@ -735,7 +733,7 @@ options49.setBinary(chrome_path);
    }
      catch (Exception ex)
    {
-       System.out.println ("Problem launching EdgeDriver: " + ex.toString());
+    this.Exception = ex.toString();
         Prompter fallbackprompt = new Prompter ("Driver Error", "Could not launch the Edge Driver, will fallback to HTMLUnitDriver: " + ex.toString(), false,0, 0);
     
    }

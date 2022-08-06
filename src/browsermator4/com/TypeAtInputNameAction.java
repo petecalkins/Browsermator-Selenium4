@@ -111,7 +111,7 @@ Thread.sleep((long)(Math.random() * 150));
   }
   catch (Exception ex)
   {
-      System.out.println ("Exception when sleeping random: " + ex.toString());
+     this.Exception = ex.toString();
   }
     try
     {
@@ -130,7 +130,7 @@ Thread.sleep((long)(Math.random() * 150));
   }
   catch (Exception ex)
   {
-      System.out.println ("Exception when sleeping random: " + ex.toString());
+     this.Exception = ex.toString();
   }
            try
      {
@@ -138,6 +138,7 @@ Thread.sleep((long)(Math.random() * 150));
      }
      catch(Exception ex)
      {
+         this.Exception = ex.toString();
        this.Pass = false;
      }
    
@@ -151,7 +152,7 @@ else
 }
 catch (Exception ex)
  {
-     System.out.println ("Exception when typing at input name: " + ex.toString());
+   this.Exception = ex.toString();
   this.Pass = false;
   
  }

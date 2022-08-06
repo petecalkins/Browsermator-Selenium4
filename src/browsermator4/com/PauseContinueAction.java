@@ -55,7 +55,7 @@ Thread.sleep(200);
         }
         catch (InterruptedException e)
                 {
-                    System.out.println("pause exception: " + e.toString());
+                  this.Exception = e.toString();
                     this.Pass = false;
                 }
     }
@@ -77,7 +77,7 @@ while(thisContinuePrompt.isVisible() == true){
        }
        catch (InterruptedException e)
                {
-                  System.out.println("pause exception: " + e.toString());
+                 this.Exception = e.toString();
                   this.Pass = false;
               }
    }   
@@ -117,7 +117,7 @@ Thread.sleep(200);
         }
         catch (InterruptedException e)
                 {
-                    System.out.println("pause exception: " + e.toString());
+                   this.Exception = e.toString();
                     this.Pass = false;
                 }
     }

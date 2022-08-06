@@ -108,7 +108,7 @@ Thread.sleep((long)(Math.random() * 150));
   }
   catch (Exception ex)
   {
-      System.out.println ("Exception when sleeping random: " + ex.toString());
+     this.Exception = ex.toString();
   }
     try
     {
@@ -127,7 +127,7 @@ Thread.sleep((long)(Math.random() * 150));
   }
   catch (Exception ex)
   {
-      System.out.println ("Exception when sleeping random: " + ex.toString());
+    this.Exception = ex.toString();
   }
           try
     {
@@ -135,7 +135,7 @@ element.sendKeys(Keys.RETURN);
     }
     catch (Exception ex)
     {
-        System.out.println ("Exception when typing at ID: " + ex.toString());
+     this.Exception = ex.toString();
        this.Pass = false; 
     }
   
@@ -151,6 +151,7 @@ else
 }
 catch (Exception e)
  {
+     this.Exception = e.toString();
   this.Pass = false;
   
  }

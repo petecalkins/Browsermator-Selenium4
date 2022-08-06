@@ -109,7 +109,7 @@ Thread.sleep((long)(Math.random() * 150));
   }
   catch (Exception ex)
   {
-      System.out.println ("Exception when sleeping random: " + ex.toString());
+   this.Exception = ex.toString();
   }
     try
     {
@@ -131,7 +131,7 @@ else
  }
  catch (Exception e)
  {
-  System.out.println (e.toString());
+ this.Exception = e.toString();
   this.Pass = false;
   
  }

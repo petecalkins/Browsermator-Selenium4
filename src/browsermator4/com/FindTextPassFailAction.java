@@ -62,7 +62,7 @@ public class FindTextPassFailAction extends BMAction
         catch (Exception ex)
         {
             this.Pass = false;
-            System.out.println ("Exception finding text: " + ex.toString());
+         this.Exception = ex.toString();
         }
      
     }

@@ -46,6 +46,7 @@ public class LeftArrowKeyAction extends BMAction {
         }
         catch (Exception ex)
         {
+            this.Exception = ex.toString();
             this.Pass = false;
         }
     }  

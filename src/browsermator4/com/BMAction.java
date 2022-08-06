@@ -27,6 +27,7 @@ String chrome_main_path;
 Map<String, Object> prefs;
 
 int index;
+String Exception;
 Boolean Pass;
 LocalDateTime TimeOfTest;
 Boolean NOT;
@@ -57,6 +58,7 @@ List<LocalDateTime> loop_time_of_test;
   this.tostore_varname = "";
   this.tostore_varvalue = "";
   this.tostore_varlist = new ArrayList<>();
+  this.Exception = "";
   this.Pass = false;
   this.TimeOfTest = LocalDateTime.now();
   this.NOT = false;
@@ -98,7 +100,7 @@ List<LocalDateTime> loop_time_of_test;
    }
     public void RunAction(RunAllTests RunThread)
     {
-        System.out.println("GOT HERE");
+      //  System.out.println("GOT HERE");
     }
    public void RunAction(WebDriver driver)
    {
@@ -173,7 +175,7 @@ WebElement element = elements.get(0);
   catch (Exception e)
  {
     
-     System.out.println ("Exception while running clickcatch: " + e.toString());
+   this.Exception =  e.toString();
   this.Pass = false;
   
  }
@@ -231,7 +233,7 @@ if (elements.isEmpty())
  catch (Exception e)
  {
   this.Pass = false;
-  System.out.println(e.toString());
+  this.Exception = e.toString();
   
  }  
             }

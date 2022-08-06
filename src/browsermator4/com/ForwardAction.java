@@ -35,6 +35,7 @@ public class ForwardAction extends BMAction
       }
         catch (Exception e)
  {
+     this.Exception = e.toString();
   this.Pass = false;
   
  }

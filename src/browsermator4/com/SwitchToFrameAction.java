@@ -37,7 +37,7 @@ this.Pass = true;
 }
 catch (Exception ex)
 {
-    System.out.println(ex.toString());
+ this.Exception = ex.toString();
     this.Pass = false;
 }
 }

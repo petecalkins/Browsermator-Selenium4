@@ -62,7 +62,7 @@ public void setVariable1(String variable)
      }
        catch (Exception e)
  {
-
+this.Exception = e.toString();
   this.Pass = false;
   
  }

@@ -20,12 +20,13 @@ import java.time.Duration;
  */
 public class StoreLinksAsArrayByXPATHAction extends BMAction {
     int sanitycount = 0;
+    
   StoreLinksAsArrayByXPATHAction(String TargetXPATH, String StoreVarName)
 {
     this.Type = "Store Links as URL List by XPATH";
     this.Variable1 = TargetXPATH;
     this.Variable2 = StoreVarName;
-  
+    
 }
       @Override
    public void SetGuts()
@@ -127,18 +128,22 @@ public class StoreLinksAsArrayByXPATHAction extends BMAction {
    if (e.getClass().getCanonicalName().equals("org.openqa.selenium.StaleElementReferenceException"))
    {
    //need to do it again, not finished loading
-    System.out.println("*****************Stale caught-redoing");
+  //  System.out.println("*****************Stale caught-redoing");
     sanitycount++;
     if (sanitycount<ec_Timeout * 2)
     {
     RunAction(driver);
     }
-      System.out.println (e.toString());
-  this.Pass = false;
+    else
+    {
+        this.Pass=false;
+    }
+    this.Exception = e.toString();
+//  this.Pass = false;
     }
    else
    {
-    System.out.println (e.toString());
+   this.Exception = e.toString();
   this.Pass = false;
            }
  }

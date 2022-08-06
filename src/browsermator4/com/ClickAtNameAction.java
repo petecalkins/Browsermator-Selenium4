@@ -84,8 +84,7 @@ WebElement element = elements.get(0);
  }
   catch (Exception e)
  {
-     e.printStackTrace();
-     System.out.println ("Exception while running clickcatch: " + e.toString());
+    this.Exception =  e.toString();
   this.Pass = false;
   
  }   

@@ -376,7 +376,8 @@ public String doInBackground()
  }
  catch (Exception ex)
  {
-     // don't worry it should close
+System.out.println ("Exception when quitting driver: " + ex.toString());     
+// don't worry it should close
  }
   
 // }
@@ -1376,39 +1377,18 @@ else
      {
         RunAgain = true;
    thisContinuePrompt.dispose();
-       boolean closecaught = false;
+    //   boolean closecaught = false;
    
  try
  {
-   if (driver!=null) {  driver.close(); }  
+   if (driver!=null) {  driver.quit(); }  
  }
  catch (Exception e)
  {
-     closecaught = true;
-     System.out.println(e.toString());
-     try {
-                driver.quit();
-            }
-            catch (Exception exce)
-            {
-               
-                System.out.println("Exception quitting" + exce.toString());
-            }
+   System.out.println("Exception when quitting driver: " + e.toString());
  }
- if (closecaught)
- {
- 
- }
- else
- {
-     try
- {
-   driver.quit();
- }
- catch (Exception ex)
- {
-     // don't worry it should close
- }
+
+
      if (STAppData.getUniqueList())
      {
          String file_option = STAppData.getUniqueFileOption();
@@ -1416,7 +1396,7 @@ else
  STAppData.ClearVisittedURLList();
      } 
  }
-     }   
+      
   });
     thisContinuePrompt.addjButtonCloseActionListener(new ActionListener()
   {
@@ -1425,6 +1405,12 @@ else
      {
         RunAgain = false;
         thisContinuePrompt.dispose();
+             if (STAppData.getUniqueList())
+     {
+         String file_option = STAppData.getUniqueFileOption();
+ STAppData.AddURLListToUniqueFile(file_option);
+ STAppData.ClearVisittedURLList();
+     } 
      }   
   });
   

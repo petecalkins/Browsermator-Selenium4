@@ -425,6 +425,8 @@ mainPanel = new JPanel(new BorderLayout());
         {
             pass_string = " has passed at ";
         }
+            to_write+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                 to_write+= LineBreak;
          if (STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Type.contains("assword"))
               {
                    to_write = bug_ID + "-" + action_ID + " Action: " + 
@@ -432,13 +434,16 @@ mainPanel = new JPanel(new BorderLayout());
                 + " ########" + 
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
+                
                                  if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))
              {
                  to_write += LineBreak;
+               
              }
              else
              {
                 to_write +=  "\n<BUTTON NAME =\"ShowHideButton\" onclick = \"ShowHideThisScreen(this.id)\" id = \"ShowHideButton"  + bug_ID + "-" + action_ID + "\">Hide Screenshot " + bug_ID + "-" + action_ID + "</BUTTON>" +LineBreak + "<img src=\"data:image/png;base64," + ThisScreenshot + "\" style=\"display: inline;\" class = \"report_screenshots\" id = \"Screenshot" + bug_ID + "-" + action_ID + "\"></img>" + LineBreak;
+            
              }
              
              
@@ -450,7 +455,8 @@ mainPanel = new JPanel(new BorderLayout());
                 + " " + ThisValue2 +
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
-        
+         to_write+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                 to_write+= LineBreak;
                   if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))
              {
                  to_write += LineBreak;
@@ -489,7 +495,8 @@ mainPanel = new JPanel(new BorderLayout());
         {
             pass_string = " has passed at ";
         }
-   
+       to_write+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                 to_write+= LineBreak;
             String concat_variable="";
             String concat_variable2="";
                     if ("urllist".equals(STAppData.BugArray.get(BugIndex).DataLoopSource))
@@ -617,6 +624,9 @@ mainPanel = new JPanel(new BorderLayout());
         {
             pass_string = " has passed at ";
         }
+             to_write+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                 to_write+= LineBreak;
+        
          if (STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Type.contains("assword"))
               {
             to_write = bug_ID + "-" + action_ID + " Action: " + 
@@ -632,7 +642,9 @@ mainPanel = new JPanel(new BorderLayout());
              }
              else
              {
-            
+              to_write+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                 to_write+= LineBreak;
+           
       to_write +=  "\n<BUTTON NAME =\"ShowHideButton\" onclick = \"ShowHideThisScreen(this.id)\" id = \"ShowHideButton"  + bug_ID + "-" + action_ID + "\">Hide Screenshot " + bug_ID + "-" + action_ID + "</BUTTON>" +LineBreak + "<img src=\"data:image/png;base64," + ThisScreenshot + "\" style=\"display: inline;\" class = \"report_screenshots\" id = \"Screenshot" + bug_ID + "-" + action_ID + "\"></img>" +  LineBreak;
          } 
                                        if (writer!=null)
@@ -652,12 +664,15 @@ mainPanel = new JPanel(new BorderLayout());
             
          else
          {
+             
               to_write = bug_ID + "-" + action_ID + " Action: " + 
                 ThisType + " " + ThisValue1
                 + " " + ThisValue2 +
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
-       
+            to_write+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                 to_write+= LineBreak;
+        
                   if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))
              {
                  to_write += LineBreak;
@@ -851,7 +866,9 @@ mainPanel = new JPanel(new BorderLayout());
                 + " ########" + 
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
-            
+                 ReportText+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                  ReportText+= LineBreak;
+        
              if (includescreens)
              {
                   if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))
@@ -872,6 +889,8 @@ mainPanel = new JPanel(new BorderLayout());
                 + " " + ThisValue2 +
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
+                ReportText+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                  ReportText+= LineBreak;
                if (includescreens)
              {
                   if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))
@@ -931,7 +950,8 @@ mainPanel = new JPanel(new BorderLayout());
                 + " ########" + 
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
-           
+             ReportText+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                  ReportText+= LineBreak;
              if (includescreens)
              {
                   if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))
@@ -952,7 +972,8 @@ mainPanel = new JPanel(new BorderLayout());
                 + " " + ThisValue2 +
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
-          
+            ReportText+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                  ReportText+= LineBreak;
               if (includescreens)
              {
                    if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))
@@ -1004,7 +1025,8 @@ mainPanel = new JPanel(new BorderLayout());
                 + " ########" + 
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
-            
+              ReportText+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                  ReportText+= LineBreak;
              if (includescreens)
              {
                   if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))
@@ -1024,6 +1046,8 @@ mainPanel = new JPanel(new BorderLayout());
                 + " " + ThisValue2 +
                      
                pass_string + ThisTimeValue.toString() + LineBreak;
+                ReportText+=STAppData.BugArray.get(BugIndex).ActionsList.get(ActionViewIndex).Exception;
+                  ReportText+= LineBreak;
                if (includescreens)
              {
                   if ("null".equals(ThisScreenshot) || "Screenshot Failed".equals(ThisScreenshot))

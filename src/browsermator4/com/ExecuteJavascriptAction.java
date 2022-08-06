@@ -78,7 +78,7 @@ public class ExecuteJavascriptAction extends BMAction {
                 }
                 catch (Exception ex)
                 {
-                     System.out.println ("Exception when running Javascript: " + ex.toString());
+               this.Exception = ex.toString();
             this.Pass = false;    
                 }
             
@@ -86,7 +86,7 @@ public class ExecuteJavascriptAction extends BMAction {
             catch (Exception ex)
             {
             Prompter errorPrompt = new Prompter("Javascript Execution Error", "Error occured executing script", false, 0,0);  
-            System.out.println(ex.toString());
+           this.Exception = ex.toString();
             }
         }
         else
@@ -98,7 +98,7 @@ public class ExecuteJavascriptAction extends BMAction {
         }
         catch (Exception ex)
         {
-            System.out.println ("Exception when running Javascript: " + ex.toString());
+          this.Exception = ex.toString();
             this.Pass = false;
         }
         

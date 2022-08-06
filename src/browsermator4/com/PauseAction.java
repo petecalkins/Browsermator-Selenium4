@@ -62,7 +62,7 @@ this.Pass = true;
         }
         catch (InterruptedException e)
                 {
-                    System.out.println("pause exception: " + e.toString());
+                  this.Exception = e.toString();
                     this.Pass = false;
                 }
     }

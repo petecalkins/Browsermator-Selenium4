@@ -52,6 +52,7 @@ try
 }
 catch (Exception ex)
 {
+    this.Exception = ex.toString();
     this.Pass = false;
 }
   

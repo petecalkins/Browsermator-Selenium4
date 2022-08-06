@@ -73,7 +73,7 @@ public class FindPAGETITLEPassFailAction extends BMAction
         {
         this.Pass = false;
         }
-        System.out.println ("Exception finding page title: " + ex.toString());
+     this.Exception = ex.toString();
     }
     }
 }

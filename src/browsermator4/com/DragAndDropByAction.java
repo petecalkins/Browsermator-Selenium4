@@ -82,7 +82,7 @@ actions.dragAndDropBy(element, xtarget, ytarget).build().perform();
  catch (Exception e)
  {
   this.Pass = false;
-  System.out.println("Exception: " + e.toString());
+ this.Exception = e.toString();
  }
     }     
 }

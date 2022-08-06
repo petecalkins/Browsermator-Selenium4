@@ -110,7 +110,7 @@ Thread.sleep((long)(Math.random() * 150));
   }
   catch (Exception ex)
   {
-      System.out.println ("Exception when sleeping random: " + ex.toString());
+     this.Exception = ex.toString();
   }
           
     try
@@ -119,6 +119,7 @@ element.sendKeys(sendkey);
     }
     catch (Exception ex)
     {
+        this.Exception = ex.toString();
        this.Pass = false; 
     }
 }
@@ -130,7 +131,7 @@ Thread.sleep((long)(Math.random() * 150));
   }
   catch (Exception ex)
   {
-      System.out.println ("Exception when sleeping random: " + ex.toString());
+     this.Exception = ex.toString();
   }
     try
     {
@@ -138,6 +139,7 @@ element.sendKeys(Keys.RETURN);
     }
     catch (Exception ex)
     {
+        this.Exception = ex.toString();
        this.Pass = false; 
     }
 }
@@ -151,7 +153,7 @@ else
  }
  catch (Exception e)
  {
-     System.out.println ("Exception when typing password at XPATH: " + e.toString());
+   this.Exception = e.toString();
   this.Pass = false;
   
  }
