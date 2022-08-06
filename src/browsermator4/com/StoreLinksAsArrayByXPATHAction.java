@@ -138,7 +138,7 @@ public class StoreLinksAsArrayByXPATHAction extends BMAction {
     {
         this.Pass=false;
     }
-    this.Exception = e.toString();
+//    this.Exception = e.toString();
 //  this.Pass = false;
     }
    else
