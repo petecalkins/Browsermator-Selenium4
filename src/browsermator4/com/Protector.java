@@ -13,7 +13,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
-import javax.xml.bind.DatatypeConverter;
+
 
 
 public class Protector {
@@ -44,8 +44,11 @@ public class Protector {
         return base64Encode(pbeCipher.doFinal(property.getBytes("UTF-8")));
     }
     private static String base64Encode(byte[] bytes) {
+        
+       Base64Encoder BEncoder = new Base64Encoder();
+        
       
-        return DatatypeConverter.printBase64Binary(bytes);
+        return BEncoder.encode(bytes);
     }
 
     public static String decrypt(String property) throws GeneralSecurityException, IOException {
@@ -67,7 +70,8 @@ public class Protector {
 
     private static byte[] base64Decode(String property) throws IOException {
         // NB: This class is internal, and you probably should use another impl
-        return DatatypeConverter.parseBase64Binary(property);
+        Base64Encoder BEncoder = new Base64Encoder();
+        return BEncoder.decode(property);
     }
 
 }

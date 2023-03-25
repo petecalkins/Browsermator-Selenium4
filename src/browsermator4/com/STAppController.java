@@ -57,7 +57,7 @@ public final SiteTestView Navigator;
 public JDesktopPane SeleniumToolDesktop;
 public final String UNIQUE_LOG_DIR;
 private int CurrentMDIWindowIndex;
-public final String ProgramVersion = "4.3.050";
+public final String ProgramVersion = "4.3.055";
 public final String lastWebDriverUpdate = "08072022";
 public boolean DriverUpdateFail = false;
 public String loginName;
@@ -2786,6 +2786,15 @@ actionindex = Integer.parseInt(parts[1])-1;
   
    
     }
+      if (args.length==1)
+      {
+           File openfilecheck = new File(args[0]);  
+       if (openfilecheck.exists())
+       {
+       OpenFile(openfilecheck.getAbsoluteFile(), false);
+       }
+         
+      }
        
   }
    public void UpdateWindowName (int MDI_CLASS_INDEX, String old_name)

@@ -5,6 +5,7 @@
  */
 package browsermator4.com;
 
+
 import com.sun.javafx.PlatformUtil;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
@@ -21,7 +22,6 @@ import java.util.Properties;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
-
 /**
  *
  * @author pcalkins
@@ -216,14 +216,7 @@ BrowserBrowser.setDialogTitle("Browse for Chrome executable.");
       switch (OperatingSystem)
       {
           
-          case "Windows":
-              process = Runtime.getRuntime().exec(new String[] { "wmic", "bios", "get", "serialnumber" });
-        process.getOutputStream().close();
-        Scanner sc = new Scanner(process.getInputStream());
-        String property = sc.next();
-        String serial = sc.next();
-      ret_val = serial;
-      break;
+    
       
           case "Mac":
           
@@ -324,7 +317,14 @@ BrowserBrowser.setDialogTitle("Browse for Chrome executable.");
                 if (sn==null){sn="";}
                 ret_val = sn;
               break;
-              
+                   default:
+              process = Runtime.getRuntime().exec(new String[] { "wmic", "bios", "get", "serialnumber" });
+        process.getOutputStream().close();
+        Scanner sc = new Scanner(process.getInputStream());
+        String property = sc.next();
+        String serial = sc.next();
+      ret_val = serial;
+      break; 
       }
       
       

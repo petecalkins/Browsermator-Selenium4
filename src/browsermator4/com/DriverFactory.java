@@ -320,6 +320,7 @@ profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "...");
           options.setUnhandledPromptBehaviour(promptBehaviorConstant);             
                  options.setPageLoadStrategy(PageLoadConstant); 
                  options.addArguments("--dns-prefetch-disable");
+                 options.addArguments("--remote-allow-origins=*");
                  prefs.put("profile.default_content_setting_values.notifications", 2);
              
                 // prefs.put("--dns-prefetch-disable", );
