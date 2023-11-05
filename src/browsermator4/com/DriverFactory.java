@@ -195,9 +195,9 @@ options.addPreference("dom.webnotifications.enabled", false);
     }
     catch (Exception ex)
     {
-        System.out.println ("Exception launching Marionette driver... possibly XP or missing msvcr110.dll: " + ex.toString());
+        System.out.println ("Exception launching Marionette driver... browse for Firefox location?: " + ex.toString());
      
-         Prompter fallbackprompt = new Prompter ("Driver Error", "Could not launch Marionette driver:" + ex.toString(), false,0,0);
+         Prompter fallbackprompt = new Prompter ("Driver Error", "You may need to set Firefox binary location:" + ex.toString(), false,0,0);
      
          
           
@@ -280,7 +280,7 @@ profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "...");
     }
     catch (Exception ex)
     {
-        System.out.println ("Exception launching Marionette driver... possibly XP or missing msvcr110.dll: " + ex.toString());
+        System.out.println ("Exception launching geckodriver... You may need to launch browsermator and set path to Firefox: " + ex.toString());
      
          Prompter fallbackprompt = new Prompter ("Driver Error", "Could not launch the Marionette driver: " + ex.toString(), false,0,0);
       

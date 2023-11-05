@@ -619,6 +619,7 @@ public class SwitchDriverAction extends BMAction
                 // prefs.put("--dns-prefetch-disable", );
                  
                  options.setExperimentalOption("prefs", prefs);  
+                  options.addArguments("--remote-allow-origins=*");
                  options.addArguments("--dns-prefetch-disable");
              if (chrome_main_path!=null) {
             

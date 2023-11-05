@@ -57,8 +57,8 @@ public final SiteTestView Navigator;
 public JDesktopPane SeleniumToolDesktop;
 public final String UNIQUE_LOG_DIR;
 private int CurrentMDIWindowIndex;
-public final String ProgramVersion = "4.3.055";
-public final String lastWebDriverUpdate = "08072022";
+public final String ProgramVersion = "4.3.061";
+public final String lastWebDriverUpdate = "11052023";
 public boolean DriverUpdateFail = false;
 public String loginName;
 public String loginPassword;
@@ -1526,9 +1526,11 @@ public void OpenBrowserMatorCloud()
                 String filestring = f.toString();
                 
                 String[] left_side_of_dot = filestring.split("\\.");
-                
+                if (left_side_of_dot.length>0)
+                {
                  f = new File(left_side_of_dot[0] + ".browsermation");
-       
+                }
+                
        
         if(f.exists() && getDialogType() == SAVE_DIALOG){
             int result = JOptionPane.showConfirmDialog(STAppFrame,"The file exists, overwrite?","Existing file",JOptionPane.YES_NO_CANCEL_OPTION);
@@ -1570,6 +1572,8 @@ File file=null;
     if (STAppData.getIsTemplateOrNew() == false  && isSaveAs==true)
     {
           String[] left_side_of_dot = STAppData.filename.split("\\.");
+          if (left_side_of_dot.length>0)
+                {
                 if (isFlatten)
                 {
                  file = new File(left_side_of_dot[0] + "-flat.browsermation");   
@@ -1577,6 +1581,7 @@ File file=null;
                 else
                 {
                  file = new File(left_side_of_dot[0] + ".browsermation");
+                }
                 }
         fc.setSelectedFile(file);
         
@@ -1589,9 +1594,10 @@ File file=null;
                 String filestring = file.toString();
                 
                 String[] left_side_of_dot = filestring.split("\\.");
-                
+                if (left_side_of_dot.length>0)
+                {
                  file = new File(left_side_of_dot[0] + ".browsermation");
-            
+                }
             }
             else
             {
@@ -1604,8 +1610,10 @@ File file=null;
          String filestring = STAppData.filename;
                 
                 String[] left_side_of_dot = filestring.split("\\.");
-                
+                if (left_side_of_dot.length>0)
+                {
                  file = new File(left_side_of_dot[0] + ".browsermation");
+                }
     }
   
     if (returnVal == JFileChooser.APPROVE_OPTION) {
